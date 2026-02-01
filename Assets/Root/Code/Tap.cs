@@ -13,6 +13,7 @@ public class Tap : MonoBehaviour
     public int TaperValuenegative;
     public int TaperValueMax;
     public GameObject referee;
+    public GameObject TapUI;
 
     public GameObject Count1;
     public GameObject Count2;
@@ -45,6 +46,8 @@ public class Tap : MonoBehaviour
         if (Time > 0 && TaperValue < TaperValueMax)
         {
             //pierde
+
+            //TapUI.SetActive(false);
             Manager.Instance.EndGame();
         }
     }
@@ -91,13 +94,14 @@ public class Tap : MonoBehaviour
             Count3.gameObject.SetActive(true);
             yield return new WaitForSeconds(1);
 
-
+            //TapUI.SetActive(false);
             StartCoroutine(vide());
 
 
         }
         else
         {
+            TapUI.SetActive(false);
             //fin de juego
             print("fin de juego manin");
         }

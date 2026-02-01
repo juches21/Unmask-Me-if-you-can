@@ -23,7 +23,7 @@ public class FighterNormal : MonoBehaviour
         {
 
         transform.position = Vector3.Lerp(gameObject.transform.position, target, Time.deltaTime);
-            if (Vector3.Distance(transform.position, target) <= 2)
+            if (Vector3.Distance(transform.position, target) <= 1.8f)
             {
                 Stop = true;
                 gameObject.GetComponent<Animator>().SetBool("hit", true);

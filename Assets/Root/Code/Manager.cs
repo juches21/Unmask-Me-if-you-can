@@ -27,7 +27,7 @@ public class Manager : MonoBehaviour
     public GameObject armature;
 
 
-    public GameObject video;
+    public GameObject videogo,video_raw;
 
 
 
@@ -117,6 +117,7 @@ public class Manager : MonoBehaviour
         //print("entra");
         if (ultimavegade==false)
         {
+            print("primera");
             ultimavegade = true;
             TapUI.SetActive(true);
             gameObject.GetComponent<Spawn>().StopRownd();
@@ -124,7 +125,8 @@ public class Manager : MonoBehaviour
         }
         else if (ultimavegade==true)
         {
-            StartCoroutine(vide());
+            print("ultima");
+            StartCoroutine(video());
 
 
         }
@@ -151,10 +153,14 @@ public class Manager : MonoBehaviour
         ScoreFinisher = 0;
     }
 
-
-    IEnumerator vide()
+    public GameObject tresde, canbas;
+    IEnumerator video()
     {
-        video.gameObject.SetActive(true);
+        //tresde.SetActive(false);
+        gameObject.GetComponent<Spawn>().StopRownd();
+        canbas.SetActive(false);
+        videogo.gameObject.SetActive(true);
+        video_raw.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(39);
         Application.Quit();

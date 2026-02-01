@@ -14,7 +14,7 @@ public class Spawn : MonoBehaviour
 
 
     public int RoundNum = 10;
-    public float RoundTime = .1f;
+    public float RoundTime = .01f;
     // Start is called before the first frame update
     void Start()
     {

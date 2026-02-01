@@ -8,7 +8,7 @@ public class UI : MonoBehaviour
 
     public GameObject UIpause;
 
-    public GameObject Video;
+    public GameObject Video, rendertexture, menu;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +41,10 @@ public class UI : MonoBehaviour
 
     public void LoadPlay()
     {
+        print("askjdaoikshbgd");
         Video.SetActive(true);
+        rendertexture.SetActive(true);
+        menu.SetActive(false);
         StartCoroutine(PlayGame());
     }
 
