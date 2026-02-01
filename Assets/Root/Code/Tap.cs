@@ -19,6 +19,8 @@ public class Tap : MonoBehaviour
     public GameObject Count3;
 
     public Slider ValueSlider;
+
+    public GameObject video;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +48,11 @@ public class Tap : MonoBehaviour
             Manager.Instance.EndGame();
         }
     }
+    public void startvid()
+    {
+        StartCoroutine(vide());
 
+    }
     public void Push()
     {
         TaperValue += TaperAdd;
@@ -84,6 +90,11 @@ public class Tap : MonoBehaviour
 
             Count3.gameObject.SetActive(true);
             yield return new WaitForSeconds(1);
+
+
+            StartCoroutine(vide());
+
+
         }
         else
         {
@@ -91,6 +102,14 @@ public class Tap : MonoBehaviour
             print("fin de juego manin");
         }
 
+    }
+
+    IEnumerator vide()
+    {
+        video.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(39);
+        Application.Quit();
     }
 
 }

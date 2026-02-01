@@ -44,6 +44,7 @@ public class Spawn : MonoBehaviour
 
         for (int i = 0; i < NumberOfEnemies; i++)
         {
+            yield return new WaitForSeconds(Interval);
 
             prefab = ListEnemy[Random.RandomRange(0,3)];
             int Index = Random.Range(0, ListSpawner.Count);
@@ -58,7 +59,6 @@ public class Spawn : MonoBehaviour
             ListSpawner.RemoveAt(Index);
 
 
-            yield return new WaitForSeconds(Interval);
 
 
         }

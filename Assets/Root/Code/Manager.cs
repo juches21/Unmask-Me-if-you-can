@@ -27,6 +27,7 @@ public class Manager : MonoBehaviour
     public GameObject armature;
 
 
+    public GameObject video;
 
 
 
@@ -103,17 +104,29 @@ public class Manager : MonoBehaviour
         }
         textMeshPro.text = Score + "";
     }
-    public bool ultimavegade;
+    public bool ultimavegade=false;
     public void Tap()
     {
-        GameObject.FindGameObjectWithTag("enemy").gameObject.SetActive(false);
+       
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
+
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.SetActive(false);
+        }
         //print("entra");
-        if (!ultimavegade)
+        if (ultimavegade==false)
         {
             ultimavegade = true;
             TapUI.SetActive(true);
             gameObject.GetComponent<Spawn>().StopRownd();
             GameObject.Find("Main Camera").GetComponent<CameraMove>().anim = true;
+        }
+        else if (ultimavegade==true)
+        {
+            StartCoroutine(vide());
+
+
         }
     }
 
@@ -139,7 +152,13 @@ public class Manager : MonoBehaviour
     }
 
 
+    IEnumerator vide()
+    {
+        video.gameObject.SetActive(true);
 
+        yield return new WaitForSeconds(39);
+        Application.Quit();
+    }
 
 
 

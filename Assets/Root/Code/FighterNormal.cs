@@ -50,6 +50,7 @@ public class FighterNormal : MonoBehaviour
 
 
     private void Dead() {
+        StopAllCoroutines();
         Stop = true;
         Manager.Instance.Punch(gameObject.transform);
         gameObject.SetActive(false);
