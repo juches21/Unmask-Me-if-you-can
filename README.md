@@ -1,9 +1,14 @@
 <h1>🥊 Unmasked </h1>
+<img src="https://github.com/juches21/Juches21-images/blob/c8b0540a08a150461607ba037311a468117ce768/Unmasked.png" alt="CH1 Manager Logo">
+<hr>
 <p><strong>Unmasked</strong> is a game developed in <strong>Unity</strong> in the Global Game Jam 2026 with a Mask theme </p>
+<hr>
+<a href="https://juan-chovi.itch.io/unmask" target="blank"><img align="center" src="https://img.shields.io/badge/Itch.io-FA5C5C?style=for-the-badge&logo=itchdotio&logoColor=white" alt="unsimpledev"  /></a>
+<hr>
 <h2>📖 Description</h2>
 <p><em>A fast-paced arena combat game where players face waves of enemies, perform punches, and activate powerful Finisher moves.</em></p>
 <p>The game combines reflex-based mini-games, dynamic enemy waves, and immersive visual feedback to create a challenging arcade experience.</p>
-
+https://github.com/juches21/Juches21-images/blob/c8b0540a08a150461607ba037311a468117ce768/Unmasked.png
 <h2>🎮 Gameplay Loop</h2>
 <ol>
     <li><strong>Enemy Waves:</strong> Enemies spawn in waves using the <span class="code">Spawn</span> system. Each enemy is managed by <span class="code">FighterNormal</span> and only moves when hitting a trigger (<span class="code">Run</span>).</li>
@@ -25,7 +30,8 @@
 <img src="https://github.com/juches21/Juches21-images/blob/2072f6e9ffb4168e09a6196c127ec4a390f84564/Capturaun3.PNG" alt="Screenshot 3">
 
 <hr>
-<h2>🧩 Core Systems</h2>
+<h2>🧠 Architecture / How It Works</h2>
+
 <h3>Manager.cs</h3>
 <p><strong>Central game controller.</strong> Coordinates score, player attacks, Finisher, round flow, and UI updates. Uses a Singleton pattern for global access.</p>
 
@@ -85,9 +91,3 @@ Manager (core system)
     <li>Dynamic camera movements and crowd population for immersion</li>
     <li>Full UI control including pause, intro videos, and transitions</li>
 </ul>
-
-<h2>📷 Screenshots / GIFs (Optional)</h2>
-<p>Add gameplay images or GIFs here to showcase combat, Finisher, and UI systems.</p>
-
-</body>
-</html>
