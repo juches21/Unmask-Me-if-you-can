@@ -22,24 +22,27 @@ public class Tap : MonoBehaviour
     public Slider ValueSlider;
 
     public GameObject video;
+
+    
+    public GameObject reff;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Resta());
+        StartCoroutine(Resist());
         StartCoroutine(CountDown());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         ValueSlider.value = TaperValue;
 
         if (TaperValue >= TaperValueMax)
         {
             //gana
             Manager.Instance.TapEnd();
-            TaperValue=0;
+            TaperValue = 0;
             referee.SetActive(false);
             StopAllCoroutines();
         }
@@ -61,24 +64,21 @@ public class Tap : MonoBehaviour
         TaperValue += TaperAdd;
     }
 
-    IEnumerator Resta()
+    IEnumerator Resist()
     {
 
         TaperValue -= Random.RandomRange(.5f, 1.6f);
-        yield return new WaitForSeconds(Random.RandomRange(0.2f,1.6f));
-        StartCoroutine(Resta());
+        yield return new WaitForSeconds(Random.RandomRange(0.2f, 1.6f));
+        StartCoroutine(Resist());
 
 
     }
-    public bool ultimavegade;
-    public GameObject reff;
     IEnumerator CountDown()
     {
         referee.SetActive(true);
         referee.GetComponent<Animation>().playAutomatically = true;
-        if(ultimavegade==false)
-        {
-            ultimavegade = true;
+     
+           
             yield return new WaitForSeconds(1);
 
             Count1.gameObject.SetActive(true);
@@ -98,13 +98,9 @@ public class Tap : MonoBehaviour
             StartCoroutine(vide());
 
 
-        }
-        else
-        {
-            TapUI.SetActive(false);
-            //fin de juego
-            print("fin de juego manin");
-        }
+        
+            
+        
 
     }
 

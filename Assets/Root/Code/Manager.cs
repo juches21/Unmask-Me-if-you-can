@@ -104,7 +104,7 @@ public class Manager : MonoBehaviour
         }
         textMeshPro.text = Score + "";
     }
-    public bool ultimavegade=false;
+    public bool LastBell=false;
     public void Tap()
     {
        
@@ -114,16 +114,15 @@ public class Manager : MonoBehaviour
         {
             enemy.SetActive(false);
         }
-        //print("entra");
-        if (ultimavegade==false)
+        if (LastBell==false)
         {
             print("primera");
-            ultimavegade = true;
+            LastBell = true;
             TapUI.SetActive(true);
             gameObject.GetComponent<Spawn>().StopRownd();
             GameObject.Find("Main Camera").GetComponent<CameraMove>().anim = true;
         }
-        else if (ultimavegade==true)
+        else if (LastBell==true)
         {
             print("ultima");
             StartCoroutine(video());

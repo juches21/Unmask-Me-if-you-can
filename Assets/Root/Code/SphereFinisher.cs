@@ -5,11 +5,8 @@ using UnityEngine;
 public class SphereFinisher : MonoBehaviour
 {
     //float scaleee = 0;
-    public bool spherecreated = true; 
+    //public bool spherecreated = true; 
     // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     // Update is called once per frame
     void Update()
@@ -18,7 +15,7 @@ public class SphereFinisher : MonoBehaviour
         
         if (transform.localScale.y >= 7)
         {
-            spherecreated = false;
+            //spherecreated = false;
             Destroy(gameObject);
         }
     }
